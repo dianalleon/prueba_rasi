@@ -1,7 +1,6 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -21,7 +20,7 @@ public class Usuario {
 
     @Column(name = "nombre")
     @NotNull
-    private String name;
+    private String nombre;
 
     @Column(name = "apellido")
     @NotNull

@@ -23,11 +23,13 @@ public class UsuarioServicesImpl implements UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-   public void eliminarUsuario(Usuario usuario){
-        usuarioRepository.delete(usuario);
+   public void eliminarUsuario(String cedula){
+        Usuario user = usuarioRepository.findUsuarioByCedula(cedula);
+        usuarioRepository.delete(user);
    }
 
-
-
+   public Usuario buscarUsuario(String cedula){
+        return usuarioRepository.findUsuarioByCedula(cedula);
+   }
 
 }
