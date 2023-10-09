@@ -19,11 +19,14 @@ public class UsuarioController {
         return usuarioService.crearUsuario(usuario);
     }
 
+    @PutMapping("editarUsuario/{cedula}")
+    public Usuario editarUsuario(@PathVariable String cedula, @RequestBody Usuario usuario){
+        return usuarioService.modificarUsuario(cedula, usuario);
+    }
 
-
-    @GetMapping("/listarUsuarios")
-    public List<Usuario> listarUsuarios(){
-        return usuarioService.listarUsuarios();
+    @DeleteMapping("eliminarUsuario")
+    public void eliminarUsuario(@RequestBody Usuario usuario) {
+       usuarioService.eliminarUsuario(usuario);
     }
 
 }

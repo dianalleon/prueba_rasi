@@ -15,6 +15,10 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "cedula")
+    @NotNull
+    private String cedula;
+
     @Column(name = "nombre")
     @NotNull
     private String name;

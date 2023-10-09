@@ -8,9 +8,8 @@ public interface UsuarioService {
 
     Usuario crearUsuario(Usuario id);
 
-    Usuario modificarUsuario(String id);
+    Usuario modificarUsuario(String cedula,Usuario usuario);
 
-    Usuario eliminarUsuario(String id);
+    void eliminarUsuario(Usuario usuario);
 
-    List<Usuario> listarUsuarios();
 }

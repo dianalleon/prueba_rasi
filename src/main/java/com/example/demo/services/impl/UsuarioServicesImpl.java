@@ -6,8 +6,6 @@ import com.example.demo.services.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class UsuarioServicesImpl implements UsuarioService {
@@ -19,11 +17,17 @@ public class UsuarioServicesImpl implements UsuarioService {
     }
 
     @Override
-    public Usuario modificarUsuario(String id) {
-        return usuarioRepository.findUsuarioByCedula(id);
+    public Usuario modificarUsuario(String cedula, Usuario usuario) {
+        Usuario user = usuarioRepository.findUsuarioByCedula(cedula);
+        usuario.setId(user.getId());
+        return usuarioRepository.save(usuario);
     }
 
-    public List<Usuario> listarUsuarios(){
-        return usuarioRepository.findAll();
-    }
+   public void eliminarUsuario(Usuario usuario){
+        usuarioRepository.delete(usuario);
+   }
+
+
+
+
 }
